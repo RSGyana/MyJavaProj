@@ -21,7 +21,7 @@ private HibernateTemplate ht;
 
 	
 	public List<WhUserType> loadallIUser() {
-		// TODO Auto-generated method stub
+		
 		return ht.loadAll(WhUserType.class);
 	}
 

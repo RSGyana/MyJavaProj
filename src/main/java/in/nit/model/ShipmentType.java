@@ -13,7 +13,7 @@ public class ShipmentType {
 @GeneratedValue
 @Column(name="sid")
 private Integer shipId;
-
+	
 @Column(name="smode")
 private String shipMode;
 

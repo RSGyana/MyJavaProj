@@ -30,7 +30,7 @@ import in.nit.view.WhUserTypePdfView;
 public class WhUserTypeController {
 	@Autowired
 	private IWhUserTypeservice service;
-
+	
 	@Autowired
 	private ServletContext context;
 	@Autowired
@@ -44,7 +44,7 @@ public class WhUserTypeController {
 		model.addAttribute("user",new WhUserType() );
 
 
-		return "UserRegisterPage";
+		return "WhUserTypeRegisterPage";
 	}
 
 	//save operation
@@ -58,7 +58,7 @@ public class WhUserTypeController {
 		//FORM BACKING OBJECT
 		model.addAttribute("user",new WhUserType() );
 
-		return "UserRegisterPage";
+		return "WhUserTypeRegisterPage";
 
 	}
 
@@ -66,7 +66,7 @@ public class WhUserTypeController {
 	public String loadallUser(Model model) {
 		List<WhUserType> list=service.loadallIUser();
 		model.addAttribute("list",list);
-		return "UserDataPage";
+		return "WhUserTypeDataPage";
 	}
 
 	@RequestMapping("/delete")
@@ -78,7 +78,7 @@ public class WhUserTypeController {
 		model.addAttribute("list",list);
 
 
-		return "UserDataPage";
+		return "WhUserTypeDataPage";
 	}
 	
 	@RequestMapping("/edit")
@@ -86,7 +86,7 @@ public class WhUserTypeController {
 		
 		WhUserType whUserType=service.getOneUser(id);
 		model.addAttribute("user", whUserType);
-		return "UserEditPage";
+		return "WhUserTypeEditPage";
 	} 
 	
 	@RequestMapping(value="update",method=RequestMethod.POST)
@@ -100,7 +100,7 @@ public class WhUserTypeController {
 		//send to ui page
 		model.addAttribute("list",list);
 		
-		return "UserDataPage";
+		return "WhUserTypeDataPage";
 	}
 	
 	@RequestMapping("/view")
@@ -108,7 +108,7 @@ public class WhUserTypeController {
 		
 		WhUserType u=service.getOneUser(id);
 		model.addAttribute("ob", u);
-		return"UserViewPage";
+		return"WhUserTypeViewPage";
 	}
 	
 	
@@ -158,7 +158,7 @@ public class WhUserTypeController {
 		String path=context.getRealPath("/");
 		util.generatePie(path, list);
 		util.generateBar(path, list);
-		return "UserCharts";
+		return "WhUserTypeCharts";
 		}
 
 

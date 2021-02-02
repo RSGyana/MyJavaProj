@@ -24,7 +24,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import
 org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
-@EnableTransactionManagement //eables HtX
+@EnableTransactionManagement //enables HtX
 
 @EnableWebMvc // Spring MVC Activated
 //load properties into Spring container
